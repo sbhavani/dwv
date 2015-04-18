@@ -56,19 +56,25 @@ dwv.gui.Toolbox = function (app)
         open.setAttribute("class", buttonClass + " ui-icon-plus");
         open.setAttribute("data-rel", "popup");
         open.setAttribute("data-position-to", "window");
+        open.setAttribute("data-toggle", "tooltip");
+        open.setAttribute("title", "Click to upload an image or url.");
     
         var undo = document.createElement("a");
         undo.setAttribute("class", buttonClass + " ui-icon-back");
         undo.onclick = app.onUndo;
-    
+        undo.setAttribute("data-toggle", "tooltip");
+        undo.setAttribute("title", "Undo last action.");
+
         var redo = document.createElement("a");
         redo.setAttribute("class", buttonClass + " ui-icon-forward");
         redo.onclick = app.onRedo;
-    
+        redo.setAttribute("data-toggle", "tooltip");
+        redo.setAttribute("title", "Redo last action.");
+
         var toggleInfo = document.createElement("a");
         toggleInfo.setAttribute("class", buttonClass + " ui-icon-info");
         toggleInfo.onclick = app.onToggleInfoLayer;
-    
+
         var toggleSaveState = document.createElement("a");
         toggleSaveState.setAttribute("class", buttonClass + " ui-icon-action");
         toggleSaveState.onclick = app.onStateSave;
@@ -78,10 +84,14 @@ dwv.gui.Toolbox = function (app)
         var tags = document.createElement("a");
         tags.href = "#tags_page";
         tags.setAttribute("class", buttonClass + " ui-icon-grid");
+        tags.setAttribute("data-toggle", "tooltip");
+        tags.setAttribute("title", "Display DICOM tags.");
 
         var download = document.createElement("a");
         download.href = "javascript:var canvas = document.getElementById('dwv-imageLayer'); Canvas2Image.saveAsPNG(canvas);";
         download.setAttribute("class", buttonClass + " ui-icon-action");
+        download.setAttribute("data-toggle", "tooltip");
+        download.setAttribute("title", "Download currently displayed image as PNG.");
 
         var node = document.getElementById("toolbar");
         node.appendChild(open);
