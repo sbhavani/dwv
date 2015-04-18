@@ -43,7 +43,7 @@ dwv.gui.UrlLoad =  dwv.gui.base.UrlLoad;
 dwv.gui.Toolbox = function (app)
 {
     var base = new dwv.gui.base.Toolbox(app);
-    
+
     this.setup = function (list)
     {
         base.setup(list);
@@ -78,14 +78,18 @@ dwv.gui.Toolbox = function (app)
         var tags = document.createElement("a");
         tags.href = "#tags_page";
         tags.setAttribute("class", buttonClass + " ui-icon-grid");
-    
+
+        var download = document.createElement("a");
+        download.href = "javascript:var canvas = document.getElementById('dwv-imageLayer'); Canvas2Image.saveAsPNG(canvas);";
+        download.setAttribute("class", buttonClass + " ui-icon-action");
+
         var node = document.getElementById("toolbar");
         node.appendChild(open);
         node.appendChild(undo);
         node.appendChild(redo);
         node.appendChild(toggleInfo);
-        node.appendChild(toggleSaveState);
         node.appendChild(tags);
+        node.appendChild(download);
         $("#toolbar").trigger("create");
     };
     this.display = function (flag)
