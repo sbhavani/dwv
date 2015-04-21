@@ -14,6 +14,31 @@ body { margin: 10px; padding: 0; }
 .layerContainer { margin: auto; text-align: center; }
 .imageLayer { left: 0px; }
 .dropBox { margin: 20px auto; }
+
+.btn-silk{
+  padding: 5px 5%;
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px #000000;
+  color: #fff;
+  outline: none;
+  border-width: 0px;
+  transition: 0.2s ease ;
+	-webkit-transition: 0.2s ease ;
+	-moz-transition: 0.2s ease ;
+	-o-transition: 0.2s ease ;
+  background-color: #797979;
+  font-size: 0px;
+  margin: 5px;
+
+}
+.btn-silk:active{
+  box-shadow: 0px 0px 4px #000000;
+}
+
+.btn-silk:hover{
+  background-color: #1d1d1d;
+}
+
 </style>
 <link type="text/css" rel="stylesheet" href="ext/jquery-mobile/jquery.mobile-1.4.5.min.css" />
 <!-- mobile web app -->
@@ -34,7 +59,6 @@ body { margin: 10px; padding: 0; }
 <script type="text/javascript" src="ext/openjpeg/openjpeg.js"></script>
 <script type="text/javascript" src="ext/kinetic/kinetic-v5.1.1-06.10.min.js"></script>
 <script src="src/tools/canvas2image.js"></script>
-<script src="src/tools/tooltips.js"></script>
     <!-- Local -->
 <script type="text/javascript" src="src/app/application.js"></script>
 <script type="text/javascript" src="src/app/state.js"></script>
@@ -85,7 +109,17 @@ body { margin: 10px; padding: 0; }
 <!-- Launch the app -->
 <script type="text/javascript" src="appgui.js"></script>
 <script type="text/javascript" src="applauncher.js"></script>
+<script src="src/tools/tooltips.js"></script>
 
+<script type="application/javascript">
+$(document).ready(function() {
+
+    $("#silk-logo").append(// inside it, append an image
+            $('<img>') // new image
+                    .attr('src', "https://d3atbsy0flqavg.cloudfront.net/v1.4/site/uri/jobs.silk.co/file/id/440ebd6b-d0e0-419e-80de-030e2526efac/?x=0&y=0&width=250&height=246&zoom=5") // set image SRC attribute
+    ); // end append
+});
+</script>
 </head>
 
 <body>

@@ -93,6 +93,14 @@ dwv.gui.Toolbox = function (app)
         download.setAttribute("data-toggle", "tooltip");
         download.setAttribute("title", "Download currently displayed image as PNG.");
 
+        var silk = document.createElement("a");
+        silk.id = "silk-logo";
+        silk.href = "https://silk-integration.herokuapp.com/";
+        silk.target = "_blank";
+        silk.setAttribute("class", "ui-btn ui-btn-inline ui-btn-bottom ui-overlay-shadow ui-btn-c");
+        silk.setAttribute("title", "Create a new Silk page based on image and metadata.");
+        silk.setAttribute("style", "float: right;");
+
         var node = document.getElementById("toolbar");
         node.appendChild(open);
         node.appendChild(undo);
@@ -100,6 +108,7 @@ dwv.gui.Toolbox = function (app)
         node.appendChild(toggleInfo);
         node.appendChild(tags);
         node.appendChild(download);
+        node.appendChild(silk);
         $("#toolbar").trigger("create");
     };
     this.display = function (flag)
